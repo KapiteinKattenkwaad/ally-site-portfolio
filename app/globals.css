@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+ol, ul, menu {
+  list-style: revert;
+  margin: 1rem 0 1rem 1rem;
+}
+
+a {
+  color: var(--color-blue-600);
+  text-decoration: underline;
+}
