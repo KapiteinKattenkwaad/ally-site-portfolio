@@ -1,3 +1,4 @@
+import MotionSection from './MotionSection';
 import { getHeaderContent } from './../lib/contentful';
 // import Image from 'next/image';
 
@@ -5,6 +6,7 @@ export default async function Header() {
   const header = await getHeaderContent();
 
   return (
+    <MotionSection>
     <section className="min-h-screen flex flex-col items-center justify-center text-center p-8 bg-gray-100">
       {/* {header.backgroundImage && (
         <div className="absolute inset-0 -z-10">
@@ -27,5 +29,6 @@ export default async function Header() {
         </a>
       )}
     </section>
+    </MotionSection>
   );
 }

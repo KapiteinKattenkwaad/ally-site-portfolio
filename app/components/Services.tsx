@@ -1,12 +1,14 @@
+import MotionSection from './MotionSection';
 import { getServices } from './../lib/contentful';
 
 export default async function Services() {
   const services = await getServices();
 
   return (
+    <MotionSection delay={0.1} >
     <section className="py-20 bg-white text-center" id="services">
       <h2 className="text-4xl font-bold mb-12 text-gray-900">Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto flex items-center justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto items-center justify-center">
       {services.map((service, idx) => (
         <div key={idx} className="...">
             {service.icon && 
@@ -20,5 +22,6 @@ export default async function Services() {
         ))}
       </div>
     </section>
+    </MotionSection>
   );
 }

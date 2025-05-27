@@ -1,4 +1,5 @@
 
+import MotionSection from './MotionSection';
 import { getWorkExamples } from './../lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image';
@@ -7,6 +8,7 @@ export default async function Work() {
   const workExamples = await getWorkExamples();
 
   return (
+    <MotionSection delay={0.3} >
     <section className="py-20 bg-white" id="work">
       <h2 className="text-4xl font-bold mb-16 text-center text-gray-900">Work</h2>
       <div className="space-y-24 max-w-6xl mx-auto px-6 text-gray-600">
@@ -35,5 +37,6 @@ export default async function Work() {
         })}
       </div>
     </section>
+    </MotionSection>
   );
 }

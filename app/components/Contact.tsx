@@ -1,11 +1,12 @@
 'use client';
-
+import MotionSection from './MotionSection';
 import { useState } from 'react';
 
 export default function Contact() {
   const [status, setStatus] = useState('');
 
   return (
+    <MotionSection delay={0.4} >
     <section className="py-20 bg-gray-50 text-center" id="contact">
       <h2 className="text-4xl font-bold mb-6 text-gray-900">Contact</h2>
       <p className="text-gray-600 mb-10">Send me a message and I’ll get back to you soon.</p>
@@ -56,5 +57,6 @@ export default function Contact() {
         {status && <p className="text-green-600 mt-4">{status}</p>}
       </form>
     </section>
+    </MotionSection>
   );
 }
