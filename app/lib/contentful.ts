@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID!,
@@ -11,7 +12,21 @@ export async function getHeaderContent() {
       limit: 1,
     });
   
-    return entries.items[0]?.fields;
+    const fields = entries.items[0]?.fields as {
+      title: string;
+      subtitle: string;
+      ctaText?: string;
+      ctaLink?: string;
+      backgroundImage?: {
+        fields: {
+          file: {
+            url: string;
+          };
+        };
+      };
+    };
+    
+    return fields;
   }
 
   export async function getServices() {
@@ -23,7 +38,13 @@ export async function getHeaderContent() {
       const fields = item.fields as {
         title: string;
         description: string;
-        icon?: string;
+        icon?: {
+          fields: {
+            file: {
+              url: string;
+            };
+          };
+        };
       };
       return fields;
     });
@@ -36,12 +57,23 @@ export async function getHeaderContent() {
     });
   
     const entry = entries.items[0];
-    const fields = entry.fields;
+    const fields = entry.fields as unknown as {
+      title: string;
+      content: Document;
+      image: {
+        fields: {
+          file: {
+            url: string;
+          };
+          title: string;
+        };
+      };
+    };
   
     return {
-      title: fields.title as string,
+      title: fields.title,
       content: fields.content,
-      imageUrl: 'https:' + fields?.image?.fields.file.url,
+      imageUrl: 'https:' + fields.image.fields.file.url,
       imageAlt: fields.image.fields.title || 'What I can do image',
     };
   }
@@ -49,7 +81,7 @@ export async function getHeaderContent() {
   export async function getWorkExamples() {
     const entries = await client.getEntries({
       content_type: 'workExample',
-      order: 'fields.order',
+      order: ['fields.order'],
     });
   
     return entries.items.map((item) => {
