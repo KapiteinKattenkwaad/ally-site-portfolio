@@ -1,6 +1,4 @@
 import { createClient } from 'contentful';
-import { BLOCKS } from '@contentful/rich-text-types';
-
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID!,
