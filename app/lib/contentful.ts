@@ -106,4 +106,29 @@ export async function getHeaderContent() {
       };
     });
   }
+
+  export async function getSeoSettings() {
+    const entries = await client.getEntries({
+      content_type: 'seo',
+      limit: 1,
+    });
+  
+    const fields = entries.items[0]?.fields as {
+      title: string;
+      description: string;
+      ogImage?: {
+        fields: {
+          file: {
+            url: string;
+          };
+        };
+      };
+    };
+  
+    return {
+      title: fields.title,
+      description: fields.description,
+      ogImage: fields.ogImage?.fields.file.url,
+    };
+  }
   

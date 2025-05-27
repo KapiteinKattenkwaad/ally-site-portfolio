@@ -1,32 +1,32 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css';
+import { Inter } from 'next/font/google';
+import { getSeoSettings } from './lib/contentful';
+import type { Metadata } from 'next';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ['latin'] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoSettings();
 
-export const metadata: Metadata = {
-  title: "Alexandra Sutton | Content designer",
-  description: "Creating content that works for you",
-};
+  return {
+    title: seo.title ?? 'Alexandra Sutton',
+    description: seo.description,
+    openGraph: seo.ogImage
+      ? {
+          images: [
+            {
+              url: 'https:' + seo.ogImage,
+            },
+          ],
+        }
+      : undefined,
+  };
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={inter.className}>
         {children}
       </body>
     </html>
