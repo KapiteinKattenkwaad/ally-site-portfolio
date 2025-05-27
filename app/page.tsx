@@ -5,6 +5,7 @@ import Services from './components/Services';
 import WhatCanIDo from './components/WhatCanIdo';
 import Work from './components/Work'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 export default async function HomePage() {
 
@@ -16,6 +17,7 @@ export default async function HomePage() {
       <WhatCanIDo />
       <Work />
       <Contact />
+      <Footer />
     </>
   );
 }
