@@ -8,11 +8,11 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: 'Contact Form <your@email.com>',
-      to: 'maxstouten+allysite@gmail.com', // your receiving address
+      from: 'Contact Form <contact@resend.dev>',
+      to: ['maxstouten@gmail.com'],
       subject: `New message from ${name}`,
       replyTo: email,
-      text: message,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     return NextResponse.json({ status: 'ok' });
