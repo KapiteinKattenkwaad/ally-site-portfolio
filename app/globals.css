@@ -121,7 +121,10 @@ section,
 }
 
 
-
+.success-message {
+  color: #16a34a;
+  font-size: 1.2rem;
+}
 
 /* animations */
 @keyframes fadeInUpScroll {

@@ -1,4 +1,3 @@
-import MotionSection from './MotionSection';
 import { getServices } from './../lib/contentful';
 
 export default async function Services() {
