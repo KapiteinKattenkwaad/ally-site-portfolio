@@ -24,12 +24,10 @@ export default async function Header() {
           <p className="text-xl text-gray-600 mb-6">{header.subtitle}</p>
           {header.ctaText && header.ctaLink && (
             <a href={header?.ctaLink} >
-
-              <button>
+              <button type="button" className="cursor-pointer text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                 {header.ctaText}
               </button>
             </a>
-
           )}
         </div>
       </section>
