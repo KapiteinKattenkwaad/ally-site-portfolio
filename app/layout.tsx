@@ -16,12 +16,12 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: seo.ogImage
       ? {
-          images: [
-            {
-              url: 'https:' + seo.ogImage,
-            },
-          ],
-        }
+        images: [
+          {
+            url: 'https:' + seo.ogImage,
+          },
+        ],
+      }
       : undefined,
   };
 }
@@ -30,6 +30,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
+        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+          <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-center gap-6 text-sm font-medium text-black">
+            <a
+              href="#services"
+              className="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="#work"
+              className="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+            >
+              Work
+            </a>
+            <a
+              href="#contact"
+              className="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+            >
+              Contact
+            </a>
+          </nav>
+        </header>
+
+
         {children}
       </body>
     </html>

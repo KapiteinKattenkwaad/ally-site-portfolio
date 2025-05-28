@@ -8,7 +8,7 @@ export default async function Header() {
 
   return (
     <MotionSection>
-      <section id="home" className="section-bg-1 min-h-screen flex flex-col items-center justify-center text-center p-8 ">
+      <section id="home" className="section-bg-1 relative min-h-dvh flex flex-col items-center justify-center text-center p-8 ">
 
         <div className="absolute inset-0">
           <Image

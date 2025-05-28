@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -25,108 +29,74 @@ body {
   line-height: 1.7;
 }
 
-/* Typography */
-h1, h2, h3, h4 {
+/* Custom element styling (avoiding generic tag overrides) */
+.text-content p {
+  font-size: 1.05rem;
+  color: #4b5563;
+}
+
+.text-content h1,
+.text-content h2,
+.text-content h3,
+.text-content h4 {
   color: var(--colorText);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.75em;
 }
 
-h1 {
+.text-content h1 {
   font-size: 2.75rem;
   line-height: 1.1;
 }
 
-h2 {
+.text-content h2 {
   font-size: 2.25rem;
 }
 
-h3 {
+.text-content h3 {
   font-size: 1.5rem;
 }
 
-p {
-  margin-bottom: 1.25em;
-  font-size: 1.05rem;
-  color: #4b5563;
-}
-
-/* Lists */
-ol, ul {
-  list-style: disc;
+.text-content ol,
+.text-content ul {
+  list-style: revert;
   padding-left: 1.25rem;
   margin-bottom: 1.5rem;
 }
 
-/* Links */
-a {
-  color: #2563eb;
-  text-decoration: underline;
-  transition: color 0.2s ease;
+section {
+  padding: 3rem 1rem;
 }
 
-a:hover {
-  color: #1d4ed8;
+@media screen and (max-width: 768px) {
+  section {
+    padding: 2.5rem .75rem;
+  }
 }
-
-/* Buttons */
-button,
-.button {
-  background-color: #111827;
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  text-align: center;
-  cursor: pointer;
-}
-
-button:hover,
-.button:hover {
-  background-color: #1f2937;
-  transform: translateY(-2px);
-}
-
-button:active,
-.button:active {
-  transform: translateY(0);
-}
-
-
-section,
+/* Backgrounds */
 .section-bg-1 {
-  background: linear-gradient(135deg, #fff8f8, #fbeff5); /* soft blush */
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
 }
 
-.section-bg-2 {
-  background: linear-gradient(135deg, #fef6f9, #f9f0ff); /* lilac-pink */
-}
-
-.section-bg-3 {
-  background: linear-gradient(135deg, #f3f4f9, #e9f0fc); /* cool mist */
+.section-bg-2,
+section {
+  background: linear-gradient(to right, #fef9f9, #fdeff2);
 }
 
 .section-bg-4 {
-  background: linear-gradient(135deg, #fff0f5, #fceefc); /* light orchid */
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
 }
 
 .section-bg-5 {
-  background: linear-gradient(135deg, #fefaf6, #f9f6ff); /* ivory to soft lavender */
+  background: linear-gradient(to right, #fef9f9, #fdeff2);
 }
 
 .section-bg-6 {
-  background: linear-gradient(135deg, #f4f5f9, #ebe9f6); /* foggy violet */
+  background: linear-gradient(to right, #f9f9fb, #eceeff);
 }
 
-
-.success-message {
-  color: #16a34a;
-  font-size: 1.2rem;
-}
-
-/* animations */
+/* Animations */
 @keyframes fadeInUpScroll {
   from {
     opacity: 0;
@@ -140,28 +110,28 @@ section,
   }
 }
 
-  section.staggered-scroll {
-    view-timeline-name: --staggered;
-    view-timeline-axis: block;
-  }
+section.staggered-scroll {
+  view-timeline-name: --staggered;
+  view-timeline-axis: block;
+}
 
-  section.staggered-scroll .fade-in-scroll {
-    animation-name: fadeInUpScroll;
-    animation-duration: 2s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
-    animation-timeline: --staggered;
-  }
+section.staggered-scroll .fade-in-scroll {
+  animation-name: fadeInUpScroll;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-timeline: --staggered;
+}
 
-  section.staggered-scroll .fade-in-scroll:nth-of-type(1) {
-    animation-range: entry 0% cover 30%;
-  }
-  section.staggered-scroll .fade-in-scroll:nth-of-type(2) {
-    animation-range: entry 10% cover 40%;
-  }
-  section.staggered-scroll .fade-in-scroll:nth-of-type(3) {
-    animation-range: entry 20% cover 50%;
-  }
-  section.staggered-scroll .fade-in-scroll:nth-of-type(4) {
-    animation-range: entry 30% cover 60%;
-  }
+section.staggered-scroll .fade-in-scroll:nth-of-type(1) {
+  animation-range: entry 0% cover 30%;
+}
+section.staggered-scroll .fade-in-scroll:nth-of-type(2) {
+  animation-range: entry 10% cover 40%;
+}
+section.staggered-scroll .fade-in-scroll:nth-of-type(3) {
+  animation-range: entry 20% cover 50%;
+}
+section.staggered-scroll .fade-in-scroll:nth-of-type(4) {
+  animation-range: entry 30% cover 60%;
+}
