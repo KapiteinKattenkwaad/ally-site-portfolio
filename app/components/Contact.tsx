@@ -7,7 +7,7 @@ export default function Contact() {
 
   return (
     <MotionSection delay={0.4} >
-    <section className="py-20 bg-gray-50 text-center" id="contact">
+    <section id="contact" className="py-20 bg-gray-50 text-center" >
       <h2 className="text-4xl font-bold mb-6 text-gray-900">Contact</h2>
       <p className="text-gray-600 mb-10">Send me a message and I’ll get back to you soon.</p>
 
