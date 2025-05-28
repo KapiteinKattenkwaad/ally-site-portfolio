@@ -11,6 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: seo.title ?? 'Alexandra Sutton',
     description: seo.description,
+    icons: {
+      icon: '/write.png',
+    },
     openGraph: seo.ogImage
       ? {
           images: [

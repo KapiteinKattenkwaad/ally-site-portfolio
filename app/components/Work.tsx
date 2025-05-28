@@ -8,8 +8,7 @@ export default async function Work() {
   const workExamples = await getWorkExamples();
 
   return (
-    <MotionSection delay={0.3} >
-      <section id="work" className="py-20 section-bg-3">
+      <section id="work" className="py-20 section-bg-4 staggered-scroll">
         <h2 className="text-4xl font-bold mb-16 text-center text-gray-900">Work</h2>
         <div className="space-y-24 max-w-6xl mx-auto px-6 text-gray-600">
           {workExamples.map((work, index) => {
@@ -17,7 +16,7 @@ export default async function Work() {
             return (
               <div
                 key={index}
-                className="grid md:grid-cols-2 gap-10 items-center"
+                className="grid md:grid-cols-2 gap-10 items-center fade-in-scroll"
               >
                 <div className={`${isEven ? 'order-1' : 'order-2'}`}>
                   <Image
@@ -37,6 +36,5 @@ export default async function Work() {
           })}
         </div>
       </section>
-    </MotionSection>
   );
 }

@@ -23,7 +23,7 @@ export default async function Header() {
           <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">{header.title}</h1>
           <p className="text-xl text-gray-600 mb-6">{header.subtitle}</p>
           {header.ctaText && header.ctaLink && (
-            <a href={header?.ctaText} >
+            <a href={header?.ctaLink} >
 
               <button>
                 {header.ctaText}

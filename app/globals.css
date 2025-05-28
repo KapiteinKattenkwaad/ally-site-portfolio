@@ -14,6 +14,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--colorText);
@@ -91,14 +95,70 @@ button:active,
 }
 
 
+section,
 .section-bg-1 {
-  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  background: linear-gradient(135deg, #fff8f8, #fbeff5); /* soft blush */
 }
 
-section,
 .section-bg-2 {
-  background: linear-gradient(to right, #fef9f9, #fdeff2);
+  background: linear-gradient(135deg, #fef6f9, #f9f0ff); /* lilac-pink */
 }
+
 .section-bg-3 {
-  background: linear-gradient(to right, #f9f9fb, #eceeff);
+  background: linear-gradient(135deg, #f3f4f9, #e9f0fc); /* cool mist */
 }
+
+.section-bg-4 {
+  background: linear-gradient(135deg, #fff0f5, #fceefc); /* light orchid */
+}
+
+.section-bg-5 {
+  background: linear-gradient(135deg, #fefaf6, #f9f6ff); /* ivory to soft lavender */
+}
+
+.section-bg-6 {
+  background: linear-gradient(135deg, #f4f5f9, #ebe9f6); /* foggy violet */
+}
+
+
+
+
+/* animations */
+@keyframes fadeInUpScroll {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+  section.staggered-scroll {
+    view-timeline-name: --staggered;
+    view-timeline-axis: block;
+  }
+
+  section.staggered-scroll .fade-in-scroll {
+    animation-name: fadeInUpScroll;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-timeline: --staggered;
+  }
+
+  section.staggered-scroll .fade-in-scroll:nth-of-type(1) {
+    animation-range: entry 0% cover 30%;
+  }
+  section.staggered-scroll .fade-in-scroll:nth-of-type(2) {
+    animation-range: entry 10% cover 40%;
+  }
+  section.staggered-scroll .fade-in-scroll:nth-of-type(3) {
+    animation-range: entry 20% cover 50%;
+  }
+  section.staggered-scroll .fade-in-scroll:nth-of-type(4) {
+    animation-range: entry 30% cover 60%;
+  }
