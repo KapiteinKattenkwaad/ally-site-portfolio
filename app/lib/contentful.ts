@@ -42,6 +42,7 @@ export async function getHeaderContent() {
           fields: {
             file: {
               url: string;
+              title?: string;
             };
           };
         };

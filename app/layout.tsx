@@ -1,9 +1,8 @@
 import './globals.css';
-import { Inter, Quicksand } from 'next/font/google';
+import { Quicksand } from 'next/font/google';
 import { getSeoSettings } from './lib/contentful';
 import type { Metadata } from 'next';
 
-const inter = Inter({ subsets: ['latin'] });
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '600', '700'] });
 
 export async function generateMetadata(): Promise<Metadata> {

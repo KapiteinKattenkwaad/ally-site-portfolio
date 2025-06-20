@@ -45,7 +45,7 @@ export default function Contact() {
           <p className="text-green-600 text-lg success-message">{status}</p>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6 text-left">
-            <p className="text-[var(--colorText)]/70 mb-10">Send me a message and I'll get back to you soon.</p>
+            <p className="text-[var(--colorText)]/70 mb-10">Send me a message and I will get back to you soon.</p>
             <div>
               <label htmlFor="name" className="block font-semibold mb-1 text-sm text-[var(--colorText)]">Name</label>
               <input

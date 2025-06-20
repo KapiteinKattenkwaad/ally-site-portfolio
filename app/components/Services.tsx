@@ -1,4 +1,5 @@
 import { getServices } from './../lib/contentful';
+import Image from 'next/image';
 
 export default async function Services() {
   const services = await getServices();
@@ -21,10 +22,12 @@ export default async function Services() {
             >
               {service.icon && (
                 <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-[var(--accent)]/20 rounded-full">
-                  <img
-                    src={service.icon?.fields?.file?.url}
-                    alt=""
+                  <Image
+                    src={`https://${service.icon?.fields?.file?.url}`}
+                    alt={service.icon?.fields?.file?.title ?? 'Icon'}
                     className="w-8 h-8 object-contain"
+                    width="40"
+                    height="40"
                   />
                 </div>
               )}
