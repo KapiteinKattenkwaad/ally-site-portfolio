@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: seo.title ?? 'Alexandra Sutton',
     description: seo.description,
     icons: {
-      icon: '/write.png',
+      icon: '/favicon.svg',
     },
     openGraph: seo.ogImage
       ? {
