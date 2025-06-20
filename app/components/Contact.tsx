@@ -24,9 +24,9 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        setStatus('Thanks! I’ll be in touch soon.');
+        setStatus("Thanks! I'll be in touch soon.");
       } else {
-        setStatus('Oops! Something went wrong.');
+        setStatus("Oops! Something went wrong.");
       }
     } catch {
       setStatus('Oops! Something went wrong.');
@@ -38,58 +38,58 @@ export default function Contact() {
 
   return (
     <MotionSection delay={0.4}>
-      <section id="contact" className="py-20 bg-gray-50 section-bg-5 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-gray-900">Contact</h2>
+      <section id="contact" className="py-20 section-bg-5 text-center">
+        <h2 className="text-4xl font-bold mb-6 text-[var(--colorText)]">Contact</h2>
 
-        {status === 'Thanks! I’ll be in touch soon.' ? (
+        {status === "Thanks! I'll be in touch soon." ? (
           <p className="text-green-600 text-lg success-message">{status}</p>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6 text-left">
-            <p className="text-gray-600 mb-10">Send me a message and I’ll get back to you soon.</p>
+            <p className="text-[var(--colorText)]/70 mb-10">Send me a message and I'll get back to you soon.</p>
             <div>
-              <label htmlFor="name" className="block font-semibold mb-1 text-sm">Name</label>
+              <label htmlFor="name" className="block font-semibold mb-1 text-sm text-[var(--colorText)]">Name</label>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-xl p-3"
+                className="w-full border border-[var(--accent)] rounded-xl p-3 bg-white/80 text-[var(--colorText)]"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block font-semibold mb-1 text-sm">Email</label>
+              <label htmlFor="email" className="block font-semibold mb-1 text-sm text-[var(--colorText)]">Email</label>
               <input
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-xl p-3"
+                className="w-full border border-[var(--accent)] rounded-xl p-3 bg-white/80 text-[var(--colorText)]"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block font-semibold mb-1 text-sm">Message</label>
+              <label htmlFor="message" className="block font-semibold mb-1 text-sm text-[var(--colorText)]">Message</label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 rows={5}
                 required
-                className="w-full border border-gray-300 rounded-xl p-3"
+                className="w-full border border-[var(--accent)] rounded-xl p-3 bg-white/80 text-[var(--colorText)]"
               />
             </div>
 
             <button
               type="submit"
-              className="cursor-pointer text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+              className="cursor-pointer text-white bg-[var(--accent)] hover:bg-[var(--colorText)] focus:outline-none focus:ring-4 focus:ring-[var(--accent)]/30 font-semibold rounded-full text-base px-6 py-3 mb-2 transition-colors"
             >
               {loading ? 'Sending...' : 'Send message'}
             </button>
 
-            {status && status !== 'Thanks! I’ll be in touch soon.' && (
+            {status && status !== "Thanks! I'll be in touch soon." && (
               <p className="text-red-600 mt-4">{status}</p>
             )}
           </form>

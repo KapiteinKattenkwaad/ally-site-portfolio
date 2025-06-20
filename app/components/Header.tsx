@@ -20,11 +20,11 @@ export default async function Header() {
         </div>
 
         <div className="z-10 relative opacity-100">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">{header.title}</h1>
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-[var(--colorText)]">{header.title}</h1>
           <p className="text-xl text-gray-600 mb-6">{header.subtitle}</p>
           {header.ctaText && header.ctaLink && (
             <a href={header?.ctaLink} >
-              <button type="button" className="cursor-pointer text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+              <button type="button" className="cursor-pointer text-white bg-[var(--accent)] hover:bg-[var(--colorText)] focus:outline-none focus:ring-4 focus:ring-[var(--accent)]/30 font-semibold rounded-full text-base px-6 py-3 mb-2 transition-all">
                 {header.ctaText}
               </button>
             </a>
