@@ -23,7 +23,7 @@ export default async function Services() {
               {service.icon && (
                 <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-[var(--accent)]/20 rounded-full">
                   <Image
-                    src={`https://${service.icon?.fields?.file?.url}`}
+                    src={`https:${service.icon?.fields?.file?.url}`}
                     alt={service.icon?.fields?.file?.title ?? 'Icon'}
                     className="w-8 h-8 object-contain"
                     width="40"
