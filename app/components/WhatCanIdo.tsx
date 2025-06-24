@@ -8,20 +8,20 @@ export default async function WhatCanIDo() {
 
   return (
     <MotionSection delay={0.2} >
-      <section id="whatcanido" className="py-20 section-bg-3">
+      <section id="whatcanido" className="py-20 section-bg-3 bg-[var(--pink-bg)] relative">
         <h2 className="text-4xl font-bold mb-16 text-center text-[var(--colorText)]">
           What exactly can I do for your business?
         </h2>
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+        <div className="max-w-xl mx-auto px-6">
           <div>
             <Image
               src={imageUrl}
               alt={imageAlt}
-              width={600}
-              height={400}
-              className="rounded-xl object-cover border-2 border-[var(--accent)]/30"
+              width={250}
+              height={300}
+              className="c-floating-image"
             />
-          </div>
+          </div> 
           <div>
             <h2 className="text-3xl font-bold mb-4">{title}</h2>
             <div className="prose max-w-none text-[var(--colorText)]/80 text-content">

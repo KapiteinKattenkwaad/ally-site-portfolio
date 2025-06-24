@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 @import "tailwindcss";
 @tailwind utilities;
 
 :root {
   --background: #f5f7fa; /* modern soft blue-gray */
+  --pink-bg: #FADCD6;
   --foreground: #232946; /* deep modern blue */
   --colorText: #232946; /* deep modern blue */
-  --accent: rgba(182,209,217); /* modern blue accent */
-  --font-sans: 'Inter', Arial, Helvetica, sans-serif;
+  --accent: rgba(182, 209, 217); /* modern blue accent */
+  --font-sans: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -25,6 +26,11 @@ body {
 .text-content p {
   font-size: 1.05rem;
   color: #4b5563;
+  font-weight: light;
+}
+
+.text-content p:empty {
+  margin-block: 1.5rem;
 }
 
 .text-content h1,
@@ -55,7 +61,7 @@ body {
 .text-content ul {
   list-style: revert;
   padding-left: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-block: 1.5rem;
 }
 
 section {
@@ -68,9 +74,39 @@ section {
   }
 }
 
-.c-blue-banner {
+nav a {
+  position: relative;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--accent);
+  transition: width .3s ease-in-out;
+}
+
+h1 {
   animation: fadeIn 0.8s ease-out 0.3s forwards;
   opacity: 0;
+}
+
+.c-floating-image {
+  bottom: 0;
+  left: -20px;
+}
+
+@media screen and (min-width: 947px) {
+  .c-floating-image {
+    position: absolute;
+  }
 }
 
 .c-blue-banner::after {
@@ -83,19 +119,8 @@ section {
   top: 70px;
   z-index: -1;
   transform: translateX(-50%);
-  animation: slideInFromLeft 0.6s ease-out forwards;
+  animation: slideInFromLeft 0.6s ease-out 0.35s forwards;
 }
-
-/* .bg-blue-banner {
-  background-color: var(--accent);
-  height: 190px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 70px;
-  z-index: -1;
-} */
 
 /* Animations */
 @keyframes fadeInUpScroll {
@@ -104,6 +129,7 @@ section {
     transform: translateY(30px) scale(0.98);
     filter: blur(2px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -115,6 +141,7 @@ section {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -124,6 +151,7 @@ section {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -145,12 +173,15 @@ section.staggered-scroll .fade-in-scroll {
 section.staggered-scroll .fade-in-scroll:nth-of-type(1) {
   animation-range: entry 0% cover 30%;
 }
+
 section.staggered-scroll .fade-in-scroll:nth-of-type(2) {
   animation-range: entry 10% cover 40%;
 }
+
 section.staggered-scroll .fade-in-scroll:nth-of-type(3) {
   animation-range: entry 20% cover 50%;
 }
+
 section.staggered-scroll .fade-in-scroll:nth-of-type(4) {
   animation-range: entry 30% cover 60%;
 }

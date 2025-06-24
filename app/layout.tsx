@@ -1,9 +1,6 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
 import { getSeoSettings } from './lib/contentful';
 import type { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'], weight: ['400', '600', '700'] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoSettings();
@@ -29,24 +26,24 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className + " bg-[var(--background)] text-[var(--colorText)]"}>
+      <body className="bg-[var(--background)] text-[var(--colorText)] font-sans" style={{ fontFamily: 'var(--font-sans)', fontWeight: 300 }}>
         <header className="sticky top-0 z-50 bg-[var(--background)]/60 backdrop-blur-lg border-b border-white/30 shadow-sm">
           <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-center gap-6 text-base font-semibold text-[var(--colorText)]">
-            <a
+            {/* <a
               href="#services"
-              className="px-4 py-2 rounded-full hover:bg-[var(--accent)] transition-colors"
+              className="pm-4 py-2"
             >
               Services
-            </a>
+            </a> */}
             <a
               href="#work"
-              className="px-4 py-2 rounded-full hover:bg-[var(--accent)] transition-colors"
+              className="mx-4 py-2"
             >
               Work
             </a>
             <a
               href="#contact"
-              className="px-4 py-2 rounded-full hover:bg-[var(--accent)] transition-colors"
+              className="mx-4 py-2 "
             >
               Contact
             </a>
