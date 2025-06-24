@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import "tailwindcss";
 @tailwind utilities;
 
@@ -6,8 +6,8 @@
   --background: #f5f7fa; /* modern soft blue-gray */
   --foreground: #232946; /* deep modern blue */
   --colorText: #232946; /* deep modern blue */
-  --accent: #3f8efc; /* modern blue accent */
-  --font-sans: 'Quicksand', Arial, Helvetica, sans-serif;
+  --accent: rgba(182,209,217); /* modern blue accent */
+  --font-sans: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -68,15 +68,34 @@ section {
   }
 }
 
-.section-bg-1,
-.section-bg-2,
-.section-bg-3,
-.section-bg-4,
-.section-bg-5,
-.section-bg-6,
-section {
-  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+.c-blue-banner {
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
+  opacity: 0;
 }
+
+.c-blue-banner::after {
+  content: '';
+  background-color: var(--accent);
+  height: 130px;
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  z-index: -1;
+  transform: translateX(-50%);
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+/* .bg-blue-banner {
+  background-color: var(--accent);
+  height: 190px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70px;
+  z-index: -1;
+} */
 
 /* Animations */
 @keyframes fadeInUpScroll {
@@ -89,6 +108,24 @@ section {
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

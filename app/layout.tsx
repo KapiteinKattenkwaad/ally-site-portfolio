@@ -1,9 +1,9 @@
 import './globals.css';
-import { Quicksand } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { getSeoSettings } from './lib/contentful';
 import type { Metadata } from 'next';
 
-const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '600', '700'] });
+const inter = Inter({ subsets: ['latin'], weight: ['400', '600', '700'] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoSettings();
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={quicksand.className + " bg-[var(--background)] text-[var(--colorText)]"}>
+      <body className={inter.className + " bg-[var(--background)] text-[var(--colorText)]"}>
         <header className="sticky top-0 z-50 bg-[var(--background)]/60 backdrop-blur-lg border-b border-white/30 shadow-sm">
           <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-center gap-6 text-base font-semibold text-[var(--colorText)]">
             <a

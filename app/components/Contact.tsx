@@ -39,13 +39,13 @@ export default function Contact() {
   return (
     <MotionSection delay={0.4}>
       <section id="contact" className="py-20 section-bg-5 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-[var(--colorText)]">Contact</h2>
+        <h2 className="text-4xl font-bold mb-6 text-[var(--colorText)]">Let's work together</h2>
 
         {status === "Thanks! I'll be in touch soon." ? (
           <p className="text-green-600 text-lg success-message">{status}</p>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6 text-left">
-            <p className="text-[var(--colorText)]/70 mb-10">Send me a message and I will get back to you soon.</p>
+            <p className="text-[var(--colorText)]/70 mb-10">Send me a message with a few details about your challenge. I'll get in touch to chat about how I can help.</p>
             <div>
               <label htmlFor="name" className="block font-semibold mb-1 text-sm text-[var(--colorText)]">Name</label>
               <input

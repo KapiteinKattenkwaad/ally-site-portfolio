@@ -10,7 +10,7 @@ export default async function WhatCanIDo() {
     <MotionSection delay={0.2} >
       <section id="whatcanido" className="py-20 section-bg-3">
         <h2 className="text-4xl font-bold mb-16 text-center text-[var(--colorText)]">
-          What can I do for you?
+          What exactly can I do for your business?
         </h2>
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           <div>

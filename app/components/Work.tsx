@@ -7,7 +7,7 @@ export default async function Work() {
 
   return (
       <section id="work" className="py-20 section-bg-4 staggered-scroll">
-        <h2 className="text-4xl font-bold mb-16 text-center text-[var(--colorText)]">Work</h2>
+        <h2 className="text-4xl font-bold mb-16 text-center text-[var(--colorText)]">Examples of my work</h2>
         <div className="space-y-24 max-w-6xl mx-auto px-6 text-[var(--colorText)]/80">
           {workExamples.map((work, index) => {
             const isEven = index % 2 === 0;
