@@ -22,9 +22,28 @@ body {
   line-height: 1.7;
 }
 
-/* Custom element styling (avoiding generic tag overrides) */
+h2 {
+  position: relative;
+  max-width: fit-content;
+    text-align: center;
+    margin-inline: auto;
+}
+
+h2::after {
+  background-color: var(--colorText);
+  content: "";
+  width: 100px;
+  height: 1px;
+  color: var(--colorText);
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
 .text-content p {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #4b5563;
   font-weight: light;
 }
@@ -40,7 +59,7 @@ body {
   color: var(--colorText);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.5em;
   font-family: var(--font-sans);
 }
 
@@ -55,6 +74,11 @@ body {
 
 .text-content h3 {
   font-size: 1.5rem;
+}
+
+.text-content h4 {
+  font-size: 1.25rem;
+  font-weight: normal;
 }
 
 .text-content ol,
