@@ -181,14 +181,14 @@ h1 {
   }
 }
 
-section.staggered-scroll {
+/* section.staggered-scroll {
   view-timeline-name: --staggered;
   view-timeline-axis: block;
 }
 
 section.staggered-scroll .fade-in-scroll {
   animation-name: fadeInUpScroll;
-  animation-duration: 2s;
+  animation-duration: .3s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
   animation-timeline: --staggered;
@@ -208,4 +208,4 @@ section.staggered-scroll .fade-in-scroll:nth-of-type(3) {
 
 section.staggered-scroll .fade-in-scroll:nth-of-type(4) {
   animation-range: entry 30% cover 60%;
-}
+} */

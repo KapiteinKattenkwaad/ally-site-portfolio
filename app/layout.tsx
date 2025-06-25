@@ -1,6 +1,8 @@
 import './globals.css';
 import { getSeoSettings } from './lib/contentful';
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoSettings();
@@ -52,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
         {children}
+        <Analytics />
       </body>
     </html>
   );
