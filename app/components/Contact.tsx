@@ -24,7 +24,7 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        setStatus("Thanks! I'll be in touch soon.");
+        setStatus("Thanks! I will be in touch soon.");
       } else {
         setStatus("Oops! Something went wrong.");
       }
@@ -41,7 +41,7 @@ export default function Contact() {
       <section id="contact" className="py-20 section-bg-5 text-center">
         <h2 className="text-4xl font-bold mb-6 text-[var(--colorText)]">Let&apos;s work together</h2>
 
-        {status === "Thanks! I'll be in touch soon." ? (
+        {status === "Thanks! I will be in touch soon." ? (
           <p className="text-green-600 text-lg success-message">{status.replace("'", "&apos;")}</p>
         ) : (
           <>

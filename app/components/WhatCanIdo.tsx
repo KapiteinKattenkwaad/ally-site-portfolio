@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Image from 'next/image';
 
 export default async function WhatCanIDo() {
-  const { title, content, imageUrl, imageAlt } = await getWhatCanIDoSection();
+  const { content, imageUrl, imageAlt } = await getWhatCanIDoSection();
 
   return (
     <MotionSection delay={0.2} >
@@ -13,17 +13,18 @@ export default async function WhatCanIDo() {
           What exactly can I do for your business?
         </h2>
         <div className="max-w-xl mx-auto px-6">
+        {imageUrl && (
           <div>
             <Image
-              src={imageUrl}
+              src={'https:' + imageUrl}
               alt={imageAlt}
               width={250}
               height={300}
               className="c-floating-image"
             />
           </div> 
+        )}
           <div>
-            <h2 className="text-3xl font-bold mb-4">{title}</h2>
             <div className="prose max-w-none text-[var(--colorText)]/80 text-content">
               {documentToReactComponents(content)}
             </div>
