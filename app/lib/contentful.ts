@@ -74,8 +74,8 @@ export async function getHeaderContent() {
     return {
       title: fields.title,
       content: fields.content,
-      imageUrl: 'https:' + fields.image.fields.file.url,
-      imageAlt: fields.image.fields.title || 'What I can do image',
+      imageUrl: fields.image?.fields.file.url ?? null,
+      imageAlt: fields.image?.fields.title || fields.title,
     };
   }
 
@@ -89,7 +89,7 @@ export async function getHeaderContent() {
       const fields = item.fields as {
         title: string;
         description: any;
-        image: {
+        image?: {
           fields: {
             file: {
               url: string;
@@ -102,8 +102,8 @@ export async function getHeaderContent() {
       return {
         title: fields.title,
         description: fields.description,
-        imageUrl: 'https:' + fields.image.fields.file.url,
-        imageAlt: fields.image.fields.title || fields.title,
+        imageUrl: fields.image?.fields.file.url ?? null,
+        imageAlt: fields.image?.fields.title ?? 'Work example image',
       };
     });
   }
