@@ -96,7 +96,7 @@ export default function Contact() {
             </form>
             <div className="flex justify-center mt-8">
               <a
-                href="https://www.linkedin.com/in/alexandra-sutton-ux/"
+                href="https://www.linkedin.com/in/alexandra-sutton/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
