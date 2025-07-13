@@ -180,32 +180,3 @@ h1 {
     opacity: 1;
   }
 }
-
-/* section.staggered-scroll {
-  view-timeline-name: --staggered;
-  view-timeline-axis: block;
-}
-
-section.staggered-scroll .fade-in-scroll {
-  animation-name: fadeInUpScroll;
-  animation-duration: .3s;
-  animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
-  animation-timeline: --staggered;
-}
-
-section.staggered-scroll .fade-in-scroll:nth-of-type(1) {
-  animation-range: entry 0% cover 30%;
-}
-
-section.staggered-scroll .fade-in-scroll:nth-of-type(2) {
-  animation-range: entry 10% cover 40%;
-}
-
-section.staggered-scroll .fade-in-scroll:nth-of-type(3) {
-  animation-range: entry 20% cover 50%;
-}
-
-section.staggered-scroll .fade-in-scroll:nth-of-type(4) {
-  animation-range: entry 30% cover 60%;
-} */
